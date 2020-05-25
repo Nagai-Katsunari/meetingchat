@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all',
+                               'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application',
+                               'data-turbolinks-track': 'reload' %>
+    <!--[if lt IE 9]>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
+      </script>
+    <![endif]-->
+  </head>
+    <body>
+    <header class="navbar navbar-fixed-top navbar-inverse">
+      <div class="container">
+ <header>
+    <p id="logo"><a href="http://192.168.33.10:3000">Meeting<span>chat</span></a></p>
+    <nav>
+        <ul>
+                       <li><a href="http://192.168.33.10:3000">トップ</a></li>
+            <% if user_signed_in? %>
+              <li><a href="http://192.168.33.10:3000/micro">新規投稿</a></li>
+              <li>
+              <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+              </li>
+            <% else %>
+              <li><a href="http://192.168.33.10:3000/users/sign_up">新規登録</a></li>
+              <li><a href="http://192.168.33.10:3000/users/sign_in">ログイン</a></li>
+
+              
+            <% end %>
+        </ul>
+    </nav>
+    <div class="clear"></div>
+</header>
+        <nav>
+          <ul class="nav navbar-nav navbar-right">
+
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <div class="container">
+      <%= yield %>
+    </div>
+
+    <footer>
+    <div id="footer_inner">
+        <p>Meetingchat 2020 All Rights Reserved</p>
+    </div>
+</footer>
+  </body>
+</html>
+

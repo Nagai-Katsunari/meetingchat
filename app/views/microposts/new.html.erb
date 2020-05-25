@@ -1,0 +1,24 @@
+<% provide(:title, 'micro') %>
+<div class="title">
+<h1>新規投稿</h1>
+</div>
+
+
+<%= form_for(@micropost) do |f| %>
+<%= render 'shared/error_messages', object: f.object %>
+
+  <div class="titlearea">
+  <p>会議の名前</p>
+  <%= f.text_field :title, placeholder: "enter title" %>
+  </div>
+  
+
+  <div class="titlearea">
+  <p>会議の内容</p>
+  <%= f.text_field :content, placeholder: "Compose new micropost..."%>
+  </div>
+  <div class="botan">
+  <%= f.submit "Post", class: "btnbtn-primary" %>
+  </div>
+
+<% end %>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head lang="ja">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css" type="text/css" media="screen">
+</head>
+<body>
+
+
+
+<div id="title">
+    <div>
+       
+    <%time=@micropost.created_at%>
+    <p><%=   time.strftime('%y/%m/%d')%>
+    <%=   @user.email%>
+
+    </p>
+        <h1><%=@micropost.title %></h1>
+        
+        <p><%=@micropost.content %></p>
+    </div>
+</div>
+
+
+
+</body>
+</html>

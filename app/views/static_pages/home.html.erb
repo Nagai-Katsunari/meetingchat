@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head lang="ja">
+    <meta charset="UTF-8">
+    <title>Rails Camp Blog</title>
+    <link rel="stylesheet" href="style.scss" type="text/css" media="screen">
+</head>
+
+<body>
+<div id="main">
+<%= link_to image_tag("jonathan-riley-VW8MUbHyxCU-unsplash.jpg", alt: "Rails logo"),
+            'http://rubyonrails.org/' %>
+</div>
+
+
+<% if user_signed_in? %>
+      <div id="article_wrap">
+
+          <div id="article_list">
+            <h3>Meeting </h3>
+
+            <%= render 'microposts/index' %>
+            
+
+          </div>
+          </div>
+
+
+            <div id="sidebar">
+              
+              
+          </div>
+          <div class="clear"></div>
+      </div>
+<%else%>
+<div class="mae">
+  <div class="mae-mae">
+  <h1>ようこそ、Meetingchatへ</h1>
+  </div>
+
+  <div class="btnbtn">
+  <a href="http://192.168.33.10:3000/users/sign_up" class="btn">Sign up</a>
+  
+
+  <p>会議の予定を立てよう！</p>
+  </div>
+</div>
+
+<%end%>
+
+
+
+</body>
+</html>
+
+
